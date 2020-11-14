@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.vertical-center {
+  margin: auto;
+}
+
+.content {
+  margin-top: 70px;
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5
+}
+
+.content__auth {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content__auth h2 {
+  margin-bottom: 50px;
+}
+
+.header {
+  height: 50px;
+  background: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header__inner {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__inner a {
+  text-decoration: none;
+  color: #292929;
+}
+
+.header__auth span {
+  font-weight: 500;
+}
+
+.header__auth a {
+  text-decoration: underline;
+}
+
+.header__inner a:hover {
+  color: #5b3c26;
+}
+
+.btn, button, input[type=submit] {
+  color: #148f68;
+  padding: 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: 2px solid #148f68;
+  transition: 100ms;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+.btn:hover, button:hover, input[type=submit]:hover {
+  background: #148f68;
+  color: white;
+}
+
+input[type=text], input[type=email], textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #148f68;
+  color: #148f68;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Roboto, serif;
+  border-radius: 5px;
+  outline: none;
+  transition: 200ms;
+  resize: none;
+}
+
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+  border: 2px solid black;
+  color: black;
+}

@@ -1,0 +1,29 @@
+.content__profile {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid #148f68;
+
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile__main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profile__main__avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
+.profile__last_login {
+  color: #949494;
+}

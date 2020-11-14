@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    {% block styles %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="header">
+    <div class="container header__inner">
+        <a href="{% url 'all_users' %}" class="header__logo"><h3>Тестирование</h3></a>
+        <div class="header__auth">
+            {% if user.is_anonymous %}
+                <a href="{% url 'social:begin' 'github' %}">Войти через GitHub</a>
+            {% else %}
+                <span>Вы вошли как <a href="{% url 'new_user_oauth' %}">{{ user.username }}</a>:</span>
+                <a href="{% url 'logout' %}">Выйти</a>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+<div class="container content">
+    {% block content %}{% endblock %}
+</div>
+{% block javascript %}{% endblock %}
+</body>
+</html>
