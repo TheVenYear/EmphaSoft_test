@@ -27,4 +27,4 @@ urlpatterns = [
     path('', include('social_django.urls')),
     path('user/', include('user.urls')),
     path('', root_redirect, name='root')
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
