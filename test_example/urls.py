@@ -20,12 +20,11 @@ from django.contrib.auth import logout
 from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 
-from user.views import new_user_oauth
+from user.views import new_user_oauth, root_redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('social_django.urls')),
     path('user/', include('user.urls')),
-
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', root_redirect, name='root')
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

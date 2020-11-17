@@ -24,3 +24,7 @@ def all_users(request):
         return redirect('login-user')
     users = User.objects.all()
     return render(request, 'all_users.html', {'users': users})
+
+
+def root_redirect(request):
+    return redirect('all_users')
