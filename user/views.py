@@ -8,9 +8,11 @@ from user.models import User
 def new_user_oauth(request):
     if request.user.is_anonymous:
         return redirect('login-user')
-    form = UserForm(data=request.POST or None, instance=request.user)
 
+    form = UserForm(request.POST or None, instance=request.user)
     if request.method == 'POST':
+        form.files = request.FILES
+        user = User.objects.get(pk=request.user.id)
         if form.is_valid():
             form.save()
             return redirect('all_users')
