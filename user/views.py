@@ -6,9 +6,9 @@ from user.models import User
 
 
 def new_user_oauth(request):
-    form = UserForm(data=request.POST or None, instance=request.user)
     if request.user.is_anonymous:
         return redirect('login-user')
+    form = UserForm(data=request.POST or None, instance=request.user)
 
     if request.method == 'POST':
         if form.is_valid():
