@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
+import dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,7 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'gz4s)&41i80c0z8-yg-(_ukps24h3k-1x+ra^x^=6pn0!rr1og'
+dotenv.load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -92,10 +94,10 @@ AUTHENTICATION_BACKENDS = [
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_GITHUB_KEY = '479f0797a9fdc8cbca19'
 SOCIAL_AUTH_GITHUB_SECRET = '877fb3583be8b307d9622c0548256d0027ce1dbe'
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/user/all/'
-SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/user/edit-profile/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/edit-profile/'
 SOCIAL_AUTH_PROTECTED_USER_FIELDS = ['first_name', 'last_name']
-LOGOUT_REDIRECT_URL = '/user/all/'
+LOGOUT_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'user.User'
 
 # Password validation
@@ -134,7 +136,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 MEDIA_URL = '/media/'
